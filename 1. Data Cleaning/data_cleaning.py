@@ -50,3 +50,10 @@ airbnb['neighbourhood_group'].value_counts()
 airbnb['last_review'] = pd.to_datetime(airbnb['last_review'])
 
 
+# clean airbnb dataframe
+airbnb.drop(['neighbourhood_group'], axis=1, inplace=True)
+# plot price vs. number of reviews
+plt.figure(figsize=(10, 6))
+plt.scatter(airbnb['price'], airbnb['reviews_per_month'])
+
+
